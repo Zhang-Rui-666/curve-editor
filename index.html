@@ -3,20 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>简易曲线编辑器 - Catmull-Rom 平滑曲线</title>
+    <title>多曲线编辑器 - 每点可调斜率</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>✏️ 曲线编辑器</h1>
-        <p class="desc">点击画布添加控制点 → 拖动控制点调整 → 自动生成平滑曲线</p>
+        <h1>✏️ 多曲线编辑器</h1>
+        <p class="desc">支持多条曲线 | 拖拽控制点 | 拖拽<strong style="color:#c44569;">粉色切线手柄</strong>改变斜率</p>
+        
         <div class="toolbar">
-            <button id="clearBtn" title="清除所有控制点">🗑️ 清空</button>
-            <button id="saveBtn" title="保存为图片">📸 保存图片</button>
+            <div class="curve-selector">
+                <span>曲线：</span>
+                <select id="curveSelect"></select>
+                <button id="addCurveBtn" title="新建曲线">➕ 新建</button>
+                <button id="delCurveBtn" title="删除当前曲线" style="background:#b53b3b;">🗑️ 删除曲线</button>
+            </div>
+            <div>
+                <button id="clearPointsBtn" title="清除当前曲线的所有控制点">🧹 清除点</button>
+                <button id="saveBtn" title="保存为图片">📸 保存图片</button>
+            </div>
         </div>
-        <canvas id="curveCanvas" width="800" height="500"></canvas>
+        
+        <canvas id="curveCanvas" width="900" height="550"></canvas>
+        
         <div class="info">
-            <span>💡 提示：鼠标点击添加点，按住并拖动可移动点 | 至少需要2个点才能绘制曲线</span>
+            💡 提示：<br>
+            • 点击画布空白 → 为当前曲线添加控制点<br>
+            • 拖拽 <span style="color:#ff7e5e; font-weight:bold;">橙色圆点</span> → 移动控制点<br>
+            • 拖拽 <span style="color:#c44569; font-weight:bold;">粉色圆点</span> → 改变该点的切线方向及力度（斜率）<br>
+            • 每条曲线独立，可通过下拉菜单切换编辑
         </div>
     </div>
     <script src="script.js"></script>

@@ -2,32 +2,30 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    user-select: none; /* 避免拖动时选中文字，提升操作体验 */
+    user-select: none;
 }
 
 body {
-    background: linear-gradient(145deg, #f0f2f5 0%, #e6e9f0 100%);
+    background: linear-gradient(145deg, #eef2f7 0%, #d9e0e8 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    font-family: 'Segoe UI', Roboto, sans-serif;
     padding: 20px;
 }
 
 .container {
-    background: rgba(255,255,255,0.85);
-    backdrop-filter: blur(2px);
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(4px);
     border-radius: 2rem;
-    box-shadow: 0 20px 35px rgba(0,0,0,0.2);
-    padding: 1.5rem 2rem 2rem 2rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    padding: 1.5rem 2rem 2rem;
     text-align: center;
-    transition: all 0.2s;
 }
 
 h1 {
     font-weight: 600;
-    font-size: 1.8rem;
     color: #1e2a3e;
     margin-bottom: 0.25rem;
 }
@@ -40,31 +38,43 @@ h1 {
 
 .toolbar {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
-    justify-content: center;
     margin-bottom: 1.2rem;
 }
 
-button {
+.curve-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #eef2f5;
+    padding: 0.3rem 1rem;
+    border-radius: 3rem;
+}
+
+select, button {
     background: #1e466e;
     border: none;
     color: white;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    padding: 0.5rem 1.2rem;
-    border-radius: 3rem;
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
     cursor: pointer;
     transition: 0.2s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+    font-family: inherit;
+}
+
+select {
+    background: #2c5282;
+    cursor: pointer;
 }
 
 button:hover {
     background: #0f2c48;
     transform: translateY(-1px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 button:active {
@@ -76,7 +86,7 @@ canvas {
     margin: 0 auto;
     background: #ffffff;
     border-radius: 1.2rem;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     cursor: crosshair;
     width: 100%;
     height: auto;
@@ -85,10 +95,11 @@ canvas {
 
 .info {
     margin-top: 1rem;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: #2c3e50;
-    background: #f8fafc;
-    display: inline-block;
-    padding: 0.3rem 1rem;
-    border-radius: 2rem;
+    background: #f1f5f9;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    text-align: left;
+    line-height: 1.4;
 }
