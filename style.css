@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none; /* 避免拖动时选中文字，提升操作体验 */
+}
+
+body {
+    background: linear-gradient(145deg, #f0f2f5 0%, #e6e9f0 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(2px);
+    border-radius: 2rem;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.2);
+    padding: 1.5rem 2rem 2rem 2rem;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #1e2a3e;
+    margin-bottom: 0.25rem;
+}
+
+.desc {
+    color: #2c3e66;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.toolbar {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+}
+
+button {
+    background: #1e466e;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1.2rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+button:hover {
+    background: #0f2c48;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 1.2rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    cursor: crosshair;
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccd7e6;
+}
+
+.info {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #2c3e50;
+    background: #f8fafc;
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border-radius: 2rem;
+}

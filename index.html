@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>简易曲线编辑器 - Catmull-Rom 平滑曲线</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>✏️ 曲线编辑器</h1>
+        <p class="desc">点击画布添加控制点 → 拖动控制点调整 → 自动生成平滑曲线</p>
+        <div class="toolbar">
+            <button id="clearBtn" title="清除所有控制点">🗑️ 清空</button>
+            <button id="saveBtn" title="保存为图片">📸 保存图片</button>
+        </div>
+        <canvas id="curveCanvas" width="800" height="500"></canvas>
+        <div class="info">
+            <span>💡 提示：鼠标点击添加点，按住并拖动可移动点 | 至少需要2个点才能绘制曲线</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
